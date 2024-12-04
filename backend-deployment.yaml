@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend-service
+        image: root_backend  # Replace with actual image
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          value: "db"
+        - name: DB_PORT
+          value: "27017"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service1
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
