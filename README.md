@@ -3,6 +3,7 @@
 **STEP1: clone the repos which are given to us**
 Here is the repos :
 Backend: https://github.com/Anand-1432/Techdome-backend
+
 Frontend: https://github.com/Anand-1432/Techdome-frontend
 
 **STEP2: Creating Dockerfiles for Frontend and Backend services** 
@@ -37,6 +38,7 @@ kubectl apply -f db-deployment.yaml
 
 **check the pods and services**
 >>kubectl get po
+
 >>kubectl get svc
 
 >>Finally Access our application using
