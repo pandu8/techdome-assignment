@@ -1,0 +1,19 @@
+# Backend Dockerfile
+
+# Use Node.js as the base image (assuming backend is built on Node.js)
+FROM node:16
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy backend application files
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Command to start the backend
+CMD ["npm", "start"]
