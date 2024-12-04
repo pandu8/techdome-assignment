@@ -27,9 +27,13 @@ Frontend: https://github.com/Anand-1432/Techdome-frontend
 >>Now start minikube --> minikube start
 
 **STEP5: Applying Kubernetes Manifets (use below commands to apply)**
+
 kubectl apply -f frontend-deployment.yaml
+
 kubectl apply -f backend-deployment.yaml
+
 kubectl apply -f db-deployment.yaml
+
 
 **check the pods and services**
 >>kubectl get po
