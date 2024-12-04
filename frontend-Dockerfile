@@ -1,0 +1,27 @@
+# Frontend Dockerfile
+
+# Use Node.js as the base image
+FROM node:18
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy frontend application files
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Build the frontend
+RUN npm run build
+
+# Install an HTTP server to serve the frontend
+RUN npm install -g serve
+
+# Expose the port for the frontend
+EXPOSE 3000
+
+# Command to serve the frontend
+CMD ["serve", "-s", "build"]
+
+CMD ["nginx", "-g", "daemon off;"]
