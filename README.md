@@ -46,3 +46,7 @@ kubectl apply -f db-deployment.yaml
 >>Finally Access our application using
 http://localhost:3000
 
+
+**important note**
+
+>>write frontend Dockerfile in frontend folder (Techdome-frontend) and backend Dockerfile in backend folder (Techdome-backend)
