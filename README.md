@@ -5,13 +5,17 @@ Here is the repos :
 Backend: https://github.com/Anand-1432/Techdome-backend
 Frontend: https://github.com/Anand-1432/Techdome-frontend
 
-**STEP2: Creating Dockerfiles for Frontend and Backend services**
+**STEP2: Creating Dockerfiles for Frontend and Backend services** 
+
 >>cd into frontend folder and create Dockerfile for frontend
+
 >>cd into fbackend folder and create Dockerfile for bacend
 
 **STEP3: Setup docker-compose file** 
 >>write docker compose file for all 3 services and its dependencies in root directory of project (docker-compose.yaml)
+
 >>build the compose file with below command. it will create images and run containers of all 3 services
+
     docker-compose up -d
 
 ****STEP4: Kubernetes setup** 
