@@ -27,7 +27,10 @@ kubectl apply -f frontend-deployment.yaml
 kubectl apply -f backend-deployment.yaml
 kubectl apply -f db-deployment.yaml
 
->>check the pods and services -->kubectl get po
-                              -->kubectl get svc
->>Finally Access our application using http://localhost:3000
+**check the pods and services**
+>>kubectl get po
+>>kubectl get svc
+
+>>Finally Access our application using
+http://localhost:3000
 
