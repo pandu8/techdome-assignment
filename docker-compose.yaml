@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./Techdome-frontend  # Path to the frontend repo
+    container_name: frontend-service
+    ports:
+      - "3000:3000"  # Expose the frontend on port 3000
+    depends_on:
+      - backend
+    networks:
+      - techdome_network
+
+  backend:
+    build: ./Techdome-backend  # Path to the backend repo
+    container_name: backend-service
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/techdome-db
+    ports:
+      - "5000:5000"  # Expose the backend API on port 5000
+    depends_on:
+      - db
+    networks:
+      - techdome_network
+
+  db:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=vasu  # MongoDB root user
+      - MONGO_INITDB_ROOT_PASSWORD=adminpassword  # MongoDB root password
+      - MONGO_INITDB_DATABASE=techdome-db  # MongoDB initial database
+    volumes:
+      - mongo-data:/data/db  # Persist MongoDB data
+    ports:
+      - "27017:27017"  # Expose MongoDB on port 27017
+volumes:
+  mongo-data:  # Define a named volume for persistent storage
+
+networks:
+  techdome_network:
+    driver: bridge
